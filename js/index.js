@@ -1,0 +1,1 @@
+let jc = new jogoController();

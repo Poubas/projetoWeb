@@ -2,57 +2,73 @@
 <html lang="en">
 
 <head>
-    <title>Página base</title>
+    <title>Coleção de Jogos</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 
 <body>
-    <div class="d-flex flex-column justify-content-between">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">
-                <img src="img/IFFlogo.svg.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-                Instituto Federal Fluminense
-            </a>
-        </nav>
-        <main class="alturaPg">
-            <h3>Cadastro de pessoas</h3> 
-            <label>Código:</label>           
-            <input type="text" id="inpCodigo" class="form-control col-md-1" readonly value="0">
-            <label>Nome:</label>
-            <input type="text" id="inpNome" class="form-control col-md-4">
-            <label>Sobrenome</label>
-            <input type="text" id="inpSobreNome" class="form-control col-md-4">
-            <label>Salário</label>
-            <input type="number"  id="inpSalario" class="form-control col-md-2">
-
-            <button id="btnSalvar" class="btn btn-info mt-3">Salvar</button>
-
-            <table class="table col-md-10 mt-2">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>Código</th>
-                        <th>Nome</th>
-                        <th>Sobrenome</th>
-                        <th>Salário</th>
-                        <th>Nome Completo</th>
-                        <th>Opções</th>
-                    </tr>
-                </thead>
-                <tbody id="tbody">
-                </tbody>
-        </main>
-
-        <footer>
-            <div class="bg-dark text-light rodape ">
-                INSTITUTO FEDERAL FLUMINENSE
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="img/IFFlogo.svg.png" width="30" height="30" class="d-inline-block align-top" alt=""
+                loading="lazy">
+            Instituto Federal Fluminense
+        </a>
+    </nav>
+    <main class="container">
+        <h2>Cadastro de Jogos</h2>
+        <form>
+            <div  class="mb-3">
+                <input type="hidden" id="inpId" readonly value="0">
             </div>
-        </footer>
-    </div>
+            <div class="mb-3">
+                <label for="tituloJogo" class="form-lable">Titulo:</label>
+                <input type="text" class="form-control" id="inpTitulo" required>
+            </div>
+            <div class="mb-3">
+                <label for="desenvolvedorJogo" class="input-group ">Desenvolvedor:</label>
+                <input type="text" class="form-control" id="inpDesenvolvedor" required>
+            </div>
+            <div class="mb-3">
+                <label for="preco" class="input-group ">Preço:</label>
+                <input type="number" class="form-control" id="inpPreco" required value="">
+            </div>
+            <div class="mb-3">
+                <label for="horasDeJogo" class="input-group ">Horas de Jogos:</label>
+                <input type="number" class="form-control" id="inpHoras" required value="">
+            </div>
+            <button type="submit" class="btn btn-primary" id="btnSubmit">Submit</button>
+        </form>
+        <hr>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="col-sm-1">Id</th>
+                    <th class="col-md-1">Titulo</th>
+                    <th class="col-md-1">Desenvolvedor</th>
+                    <th class="col-md-1">Preço</th>
+                    <th class="col-md-1">Horas de Jogos</th>
+                    <th class="col-md-1">Rendimento</th>
+                    <th class="col-3">Opções</th>
+                </tr>
+            </thead>
+            <tbody id="tblJogo">
+            </tbody>
+        </table>
+    </main>
+
+    <footer class="footer bg-dark text-white text-center">
+        <div class="container">
+            <span>Instituto Federal Fluminense</span>
+        </div>
+    </footer>
 
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/model/jogo.js"></script>
+    <script src="js/controller/jogoController.js"></script>
+    <script src="js/index.js"></script>
 </body>
-
+ <!-- Grupo: Pedro Soares Poubel e Gabriel de Souza Almeida  -->
 </html>
